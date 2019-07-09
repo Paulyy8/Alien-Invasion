@@ -20,12 +20,12 @@ class Bullet(Sprite):
         self.y = float(self.rect.y)
 
         self.color = game.settings.bullet_color
-        self.speed_factor = game.settings.bullet_speed_factor
+        self.speed_factor = game.settings.bullet_speed_factor * 100
 
     def update(self):
         """Move the bullet up the screen."""
         # Update the decimal postion of the bullet.
-        self.y -= self.speed_factor
+        self.y -= self.game.delta_time * self.speed_factor
         # Update the rect position.
         self.rect.y = self.y
 
