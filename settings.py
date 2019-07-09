@@ -13,7 +13,8 @@ class Settings:
         self.frame_rate = 0
 
         # Ship settings
-        self.ship_speed_factor = 8
+        self.ship_speed_factor = 16
+        self.ship_break_factor = 40
 
         # Bullet settings
         self.bullet_speed_factor = 10
