@@ -1,7 +1,8 @@
 import pygame
 from bullet import Bullet
 
-class Ship():
+
+class Ship:
 
     def __init__(self, game):
         """Initialize the ship and set its starting position."""

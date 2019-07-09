@@ -4,6 +4,7 @@ from pygame.sprite import Group
 from settings import Settings
 from ship import Ship
 
+
 class AlienInvasion:
     def __init__(self):
         self.settings = Settings()
@@ -20,16 +21,15 @@ class AlienInvasion:
     def initWindow(self):
         pygame.display.set_caption("Alien Invasion")
 
-    
     def run(self):
-        #Start the main loop for the game.
+        # Start the main loop for the game.
         while True:
             self.check_events()
             self.ship.update()
             self.bullets.update()
             self.update_screen()
 
-        # Make the most recently drawn screen visible.
+            # Make the most recently drawn screen visible.
             pygame.display.flip()
 
     def check_events(self):
@@ -39,7 +39,7 @@ class AlienInvasion:
                 sys.exit()
             else:
                 self.ship.check_events(event)
-            
+
     def update_screen(self):
         """Update images on the screen and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
@@ -51,6 +51,7 @@ class AlienInvasion:
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
+
 
 game = AlienInvasion()
 game.run()

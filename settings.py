@@ -1,4 +1,4 @@
-class Settings():
+class Settings:
     """A class to store all settings for Alien invasion."""
 
     def __init__(self):
