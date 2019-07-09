@@ -28,7 +28,13 @@ class Ship:
         # Create a new bullet and add it to the bullets group.
         self.game.bullets.add(Bullet(self.game))
 
-    def check_keydown_events(self, event):
+    def check_events(self, event):
+        if event.type == pygame.KEYDOWN:
+            self.on_keydown(event)
+        elif event.type == pygame.KEYUP:
+            self.on_keyup(event)
+
+    def on_keydown(self, event):
         """Respond to keypresses"""
         if event.key == pygame.K_RIGHT:
             self.moving_right = True
@@ -37,18 +43,12 @@ class Ship:
         elif event.key == pygame.K_SPACE:
             self.shoot()
 
-    def check_keyup_events(self, event):
+    def on_keyup(self, event):
         """Respond to key releases."""
         if event.key == pygame.K_RIGHT:
             self.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.moving_left = False
-
-    def check_events(self, event):
-        if event.type == pygame.KEYDOWN:
-            self.check_keydown_events(event)
-        elif event.type == pygame.KEYUP:
-            self.check_keyup_events(event)
     
     def update(self):
         """Update the ship's position based on the movement flag."""
