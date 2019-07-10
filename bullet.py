@@ -24,6 +24,10 @@ class Bullet(Sprite):
 
     def update(self):
         """Move the bullet up the screen."""
+
+        # bullet is out of screen. can be destroyed
+        if self.rect.bottom < 0:
+            self.destroy()
         # Update the decimal postion of the bullet.
         self.y -= self.game.delta_time * self.speed_factor
         # Update the rect position.
@@ -32,3 +36,6 @@ class Bullet(Sprite):
     def draw_bullet(self):
         """Draw the bullet to the screen."""
         pygame.draw.rect(self.game.screen, self.color, self.rect)
+
+    def destroy(self):
+        self.game.bullets.remove(self)

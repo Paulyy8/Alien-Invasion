@@ -47,7 +47,7 @@ class AlienInvasion:
                 self.ship.check_events(event)
 
     def render_frame_rate(self):
-        text = self.font.render(str(int(self.clock.get_fps())) + " delta time: " + str(self.delta_time) + self.ship.to_string(), True, (195, 0, 0))
+        text = self.font.render(str(int(self.clock.get_fps())) + "bullets" + str(len(self.bullets)) + " delta time: " + str(self.delta_time) + self.ship.to_string(), True, (195, 0, 0))
         self.screen.blit(text, (20, 10))
 
     def update_screen(self):
