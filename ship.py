@@ -35,7 +35,7 @@ class Ship:
 
     def shoot(self):
         # Create a new bullet and add it to the bullets group.
-        self.game.bullets.add(Bullet(self.game))
+        Bullet(self.game)
 
     def check_events(self, event):
         if event.type == pygame.KEYDOWN:
@@ -92,7 +92,7 @@ class Ship:
         """Draw the ship at its current location"""
         self.game.screen.blit(self.image, self.rect)
 
-    def to_string(self):
+    def __str__(self):
         return "ship: x: " + str(self.rect.centerx)\
                + ", move left: " + str(self.moving_left) \
                + ", move right: " + str(self.moving_right) \
